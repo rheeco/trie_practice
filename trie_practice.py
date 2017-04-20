@@ -68,7 +68,7 @@ class TrieNode:
         # plus one for empty string at column 0
         for column in range(1, columns):
             insert_dist = current_row[column - 1] + 1
-            delete_dist = current_row[column - 1]
+            delete_dist = previous_row[column] + 1
             
             if word[column - 1] != letter:
                 replace_dist = previous_row[column - 1] + 1
